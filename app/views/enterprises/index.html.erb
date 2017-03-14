@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Empresas</h1>
+<%= render 'form', post: @post %>
+<table>
+  <thead>
+    <tr>
+      <th>Company</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @enterprises.each do |enterprise| %>
+    <%= render 'index_enterprise', enterprise: enterprise%>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Enterprise', new_enterprise_path %>

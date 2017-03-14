@@ -1,0 +1,24 @@
+     <tr id="enterprise_<%= enterprise.id%>">
+     	<td><%= enterprise.company %></td>
+     	<td><%= link_to 'Show', enterprise %></td>
+     	<td><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal_enterprise_<%= enterprise.id%>">
+     		Editar
+     	</button></td>
+     	
+     	<td><%= link_to 'Destroy', enterprise, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %></td>
+     </tr>
+
+<!-- Modal -->
+<div class="modal fade" id="modal_enterprise_<%= enterprise.id%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Editar Compañia</h4>
+      </div>
+      <div class="modal-body">
+        <%= render 'form', enterprise: enterprise%>
+      </div>
+    </div>
+  </div>
+</div>

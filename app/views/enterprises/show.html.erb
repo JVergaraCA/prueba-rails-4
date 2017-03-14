@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @enterprise.company %>
+</p>
+<%= form_for([@enterprise, @comment], remote: true) do |f| %>
+<%= f.label :content, "Comentar" %>
+<%= f.text_area :content %> <br>
+<%= f.submit "Enviar" %>
+<%end%>
+<br><br><br>
+<h2>Comentarios</h2>
+<ul>
+	<% @comments.each do |comment| %>
+	<%= render 'show_comments', comment: comment%>
+	<%end%>
+</ul>
+
+
+<%= link_to 'Back', enterprises_path %>
